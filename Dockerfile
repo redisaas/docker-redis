@@ -1,5 +1,8 @@
-FROM frodenas/ubuntu
-MAINTAINER SAP SE
+FROM srinivasachalla/docker-ubuntu
+MAINTAINER Abhay Kumar <abhay.kumar02@sap.com>
+
+## Install wget
+RUN apt-get install wget
 
 # Install and configure Redis 3.0
 RUN cd /tmp && \
@@ -15,6 +18,9 @@ RUN cd /tmp && \
 
     apt-get install --yes runit && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+## remov wget
+RUN apt-get remove wget -y
 
 # Add scripts
 ADD scripts /scripts
