@@ -1,4 +1,4 @@
-FROM srinivasachalla/ubuntu
+FROM srinivasachalla/docker-ubuntu
 MAINTAINER Abhay Kumar <abhay.kumar02@sap.com>
 
 ## Install wget
