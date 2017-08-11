@@ -1,6 +1,9 @@
 FROM frodenas/ubuntu
 MAINTAINER SAP SE
 
+## Install wget
+RUN apt-get install wget
+
 # Install and configure Redis 3.0
 RUN cd /tmp && \
     wget http://download.redis.io/releases/redis-3.0.7.tar.gz && \
@@ -15,6 +18,9 @@ RUN cd /tmp && \
 
     apt-get install --yes runit && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+## remove wget
+RUN apt-get remove wget -y
 
 # Add scripts
 ADD scripts /scripts
