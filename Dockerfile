@@ -19,7 +19,7 @@ RUN cd /tmp && \
     apt-get install --yes runit && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-## remove wget
+## remov wget
 RUN apt-get remove wget -y
 
 # Add scripts
