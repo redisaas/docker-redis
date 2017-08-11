@@ -1,5 +1,5 @@
-FROM frodenas/ubuntu
-MAINTAINER SAP SE
+FROM srinivasachalla/ubuntu
+MAINTAINER Abhay Kumar <abhay.kumar02@sap.com>
 
 ## Install wget
 RUN apt-get install wget
